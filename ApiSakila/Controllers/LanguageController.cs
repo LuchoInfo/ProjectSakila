@@ -1,7 +1,12 @@
 ﻿using ApiSakila.Models;
+using ApiSakila.Models.Dto;
+using ApiSakila.Repository.IRepository;
+using AutoMapper;
+using Azure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace ApiSakila.Controllers
 {
@@ -10,33 +15,65 @@ namespace ApiSakila.Controllers
     public class LanguageController : ControllerBase
     {
         private readonly SakilaDbContext _dbContext;
-        public LanguageController(SakilaDbContext context)
+        private readonly ILogger<LanguageController> _logger;
+        private readonly IMapper _mapper;
+        protected APIResponse _response;
+        private readonly ILanguageRepository _languageRepo;
+
+        public LanguageController(SakilaDbContext context, ILogger<LanguageController> logger, IMapper mapper, ILanguageRepository languageRepo)
         {
             _dbContext = context;
+            _logger = logger;
+            _mapper = mapper;
+            _languageRepo = languageRepo;
+            _response = new();
         }
 
         [HttpGet]
-        public IActionResult Get()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<APIResponse>> GetLanguages()
         {
             try
             {
-                // Realizar una consulta de prueba
-                var primerRegistro = _dbContext.Languages.FirstOrDefault();
+                _logger.LogInformation("Get languages");
 
-                if (primerRegistro != null)
-                {
-                    return Ok(primerRegistro);
-                }
-                else
-                {
-                    return NotFound("No se encontraron registros.");
-                }
+                IEnumerable<Language> languageList = await _languageRepo.GetAll();
+
+                _response.Result = _mapper.Map<IEnumerable<LanguageDto>>(languageList);
+                _response.statusCode = HttpStatusCode.OK;
+
+                return Ok(_response);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Error: {ex.Message}");
+                _response.IsSuccessful = false;
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
             }
+            return _response;
         }
+
+        //[HttpGet]
+        //public IActionResult Get()
+        //{
+        //    try
+        //    {
+        //        // Realizar una consulta de prueba
+        //        var primerRegistro = _dbContext.Languages.FirstOrDefault();
+
+        //        if (primerRegistro != null)
+        //        {
+        //            return Ok(primerRegistro);
+        //        }
+        //        else
+        //        {
+        //            return NotFound("No se encontraron registros.");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, $"Error: {ex.Message}");
+        //    }
+        //}
     }
 }
 
