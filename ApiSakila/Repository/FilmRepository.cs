@@ -3,19 +3,19 @@ using ApiSakila.Repository.IRepository;
 
 namespace ApiSakila.Repository
 {
-    public class LanguageRepository : Repository<Language>, ILanguageRepository
+    public class FilmRepository : Repository<Film>, IFilmRepository
     {
         private readonly SakilaDbContext _dbContext;
 
-        public LanguageRepository(SakilaDbContext dbContext) :base(dbContext)
+        public FilmRepository(SakilaDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public async Task<Language> Update(Language entity)
+        public async Task<Film> Update(Film entity)
         {
             entity.LastUpdate = DateTime.Now;
-            _dbContext.Languages.Update(entity);
+            _dbContext.Films.Update(entity);
             await _dbContext.SaveChangesAsync();
             return entity;
         }

@@ -14,15 +14,13 @@ namespace ApiSakila.Controllers
     [ApiController]
     public class LanguageController : ControllerBase
     {
-        private readonly SakilaDbContext _dbContext;
         private readonly ILogger<LanguageController> _logger;
         private readonly IMapper _mapper;
         protected APIResponse _response;
         private readonly ILanguageRepository _languageRepo;
 
-        public LanguageController(SakilaDbContext context, ILogger<LanguageController> logger, IMapper mapper, ILanguageRepository languageRepo)
+        public LanguageController(ILogger<LanguageController> logger, IMapper mapper, ILanguageRepository languageRepo)
         {
-            _dbContext = context;
             _logger = logger;
             _mapper = mapper;
             _languageRepo = languageRepo;
@@ -38,9 +36,9 @@ namespace ApiSakila.Controllers
                 _logger.LogInformation("Get languages");
 
                 IEnumerable<Language> languageList = await _languageRepo.GetAll();
-
                 _response.Result = _mapper.Map<IEnumerable<LanguageDto>>(languageList);
                 _response.statusCode = HttpStatusCode.OK;
+
 
                 return Ok(_response);
             }
@@ -52,28 +50,6 @@ namespace ApiSakila.Controllers
             return _response;
         }
 
-        //[HttpGet]
-        //public IActionResult Get()
-        //{
-        //    try
-        //    {
-        //        // Realizar una consulta de prueba
-        //        var primerRegistro = _dbContext.Languages.FirstOrDefault();
-
-        //        if (primerRegistro != null)
-        //        {
-        //            return Ok(primerRegistro);
-        //        }
-        //        else
-        //        {
-        //            return NotFound("No se encontraron registros.");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, $"Error: {ex.Message}");
-        //    }
-        //}
     }
 }
 

@@ -22,6 +22,7 @@ builder.Services.AddDbContext<SakilaDbContext>(option =>
 builder.Services.AddAutoMapper(typeof(MappingConfig));
 
 builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
+builder.Services.AddScoped<IFilmRepository, FilmRepository>();
 
 var app = builder.Build();
 

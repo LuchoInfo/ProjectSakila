@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using ApiSakila.Models.Dto;
 
 namespace ApiSakila.Models;
 
@@ -217,4 +218,6 @@ public partial class SakilaDbContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+public DbSet<ApiSakila.Models.Dto.FilmDto> FilmDto { get; set; } = default!;
 }
