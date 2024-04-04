@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiSakila", "ApiSakila\ApiSakila.csproj", "{10130314-E18F-4536-A7EA-98225E85979D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiSakila", "ApiSakila\ApiSakila.csproj", "{10130314-E18F-4536-A7EA-98225E85979D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSakila", "WebSakila\WebSakila.csproj", "{AB46B363-F046-4B04-84E2-CE9A8A47A92A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D9AD3F82-9620-4751-B392-CA4FABCC678B} = {D9AD3F82-9620-4751-B392-CA4FABCC678B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitySakila", "UtilitySakila\UtilitySakila.csproj", "{D9AD3F82-9620-4751-B392-CA4FABCC678B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,14 @@ Global
 		{10130314-E18F-4536-A7EA-98225E85979D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10130314-E18F-4536-A7EA-98225E85979D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10130314-E18F-4536-A7EA-98225E85979D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB46B363-F046-4B04-84E2-CE9A8A47A92A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB46B363-F046-4B04-84E2-CE9A8A47A92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB46B363-F046-4B04-84E2-CE9A8A47A92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB46B363-F046-4B04-84E2-CE9A8A47A92A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9AD3F82-9620-4751-B392-CA4FABCC678B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9AD3F82-9620-4751-B392-CA4FABCC678B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9AD3F82-9620-4751-B392-CA4FABCC678B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9AD3F82-9620-4751-B392-CA4FABCC678B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
