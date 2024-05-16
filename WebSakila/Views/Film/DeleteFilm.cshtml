@@ -1,0 +1,103 @@
+﻿@model WebSakila.Models.Dto.FilmDto
+@{
+    ViewData["Title"] = "DeleteFilm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="DeleteFilm">
+    <div class="container border p-3">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input hidden asp-for="FilmId" />
+
+        <div class="row">
+            <h2 class="text-info">Eliminar pelicula</h2>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Titulo de la Pelicula</label>
+                <input asp-for="Title" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Descripcion</label>
+                <input asp-for="Description" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Año de lanzamiento</label>
+                <select asp-for="ReleaseYear" disabled class="form-control">
+                    <option selected>@Model.ReleaseYear</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Idioma secundario</label>
+                <textarea asp-for="LanguageId" disabled class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Duracion de renta</label>
+                <textarea asp-for="RentalDuration" disabled class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Tasa de arrendamiento</label>
+                <textarea asp-for="RentalRate" disabled class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Costo de reemplazo</label>
+                <textarea asp-for="ReplacementCost" disabled class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Clasificación</label>
+                <textarea asp-for="Rating" disabled class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Caracteristicas especiales</label>
+                <input asp-for="SpecialFeatures" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Ultima actualización</label>
+                <input asp-for="LastUpdate" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 d-md-block mt-2">
+            <button type="submit" class="btn btn-danger">Remover</button>
+            <a asp-controller="Film" asp-action="IndexFilm" class="btn btn-success">Regresar</a>
+        </div>
+
+
+    </div>
+
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

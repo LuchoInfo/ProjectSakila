@@ -58,7 +58,7 @@ namespace WebSakila.Controllers
         }
 
 
-        public async Task<IActionResult> UpdateVilla(int filmId)
+        public async Task<IActionResult> UpdateFilm(int filmId)
         {
             var response = await _filmService.Get<APIResponse>(filmId);
 
