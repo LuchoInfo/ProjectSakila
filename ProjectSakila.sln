@@ -5,12 +5,14 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiSakila", "ApiSakila\ApiSakila.csproj", "{10130314-E18F-4536-A7EA-98225E85979D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSakila", "WebSakila\WebSakila.csproj", "{AB46B363-F046-4B04-84E2-CE9A8A47A92A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSakila", "WebSakila\WebSakila.csproj", "{AB46B363-F046-4B04-84E2-CE9A8A47A92A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D9AD3F82-9620-4751-B392-CA4FABCC678B} = {D9AD3F82-9620-4751-B392-CA4FABCC678B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitySakila", "UtilitySakila\UtilitySakila.csproj", "{D9AD3F82-9620-4751-B392-CA4FABCC678B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilitySakila", "UtilitySakila\UtilitySakila.csproj", "{D9AD3F82-9620-4751-B392-CA4FABCC678B}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Reactsakila", "ReactSakila\Reactsakila.esproj", "{9539F51A-E25F-4E68-83C1-FCF4D1AE3FA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +32,12 @@ Global
 		{D9AD3F82-9620-4751-B392-CA4FABCC678B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9AD3F82-9620-4751-B392-CA4FABCC678B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9AD3F82-9620-4751-B392-CA4FABCC678B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9539F51A-E25F-4E68-83C1-FCF4D1AE3FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9539F51A-E25F-4E68-83C1-FCF4D1AE3FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9539F51A-E25F-4E68-83C1-FCF4D1AE3FA6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9539F51A-E25F-4E68-83C1-FCF4D1AE3FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9539F51A-E25F-4E68-83C1-FCF4D1AE3FA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9539F51A-E25F-4E68-83C1-FCF4D1AE3FA6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
